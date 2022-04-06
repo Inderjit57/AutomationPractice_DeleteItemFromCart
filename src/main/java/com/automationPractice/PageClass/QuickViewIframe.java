@@ -1,5 +1,7 @@
 package com.automationPractice.PageClass;
 
+import java.util.concurrent.TimeUnit;
+
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.FindBy;
@@ -34,7 +36,8 @@ public class QuickViewIframe extends TestBase {
 	WebElement goToCart;
 
 	public void addToCart() {
-		Utils.javascriptClick(addToCart);
+		//Utils.javascriptClick(addToCart);
+		addToCart.click();
 		// switch back to default content
 		wd.switchTo().defaultContent();
 	}
