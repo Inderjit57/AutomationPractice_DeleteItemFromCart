@@ -10,6 +10,7 @@ import com.automationPractice.Utils.Utils;
 public class ItemPurchasedPayment extends TestBase {
 	public ItemPurchasedPayment() {
 		PageFactory.initElements(wd, this);
+		waitForDocumentCompleteState(10);
 	}
 
 	@FindBy(css = ".bankwire")
