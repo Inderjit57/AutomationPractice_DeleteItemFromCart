@@ -6,20 +6,20 @@ import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
 
 import com.automationPractice.BasePackage.TestBase;
-import com.automationPractice.DeleteItemFromCart.AccountPage;
-import com.automationPractice.DeleteItemFromCart.Homepage;
-import com.automationPractice.DeleteItemFromCart.QuickViewIframe;
-import com.automationPractice.DeleteItemFromCart.ShoppingCartSummary;
-import com.automationPractice.DeleteItemFromCart.SignInPage;
-import com.automationPractice.DeleteItemFromCart.ViewCart;
-import com.automationPractice.DeleteItemFromCart.WomenTab;
+import com.automationPractice.PageClass.AccountPage;
+import com.automationPractice.PageClass.Homepage;
+import com.automationPractice.PageClass.QuickViewIframe;
+import com.automationPractice.PageClass.ShoppingCartSummary;
+import com.automationPractice.PageClass.SignInSignOut;
+import com.automationPractice.PageClass.ViewCart;
+import com.automationPractice.PageClass.WomenTab;
 
 public class ShoppingCartSummaryTest extends TestBase {
 	Homepage homepage;
 	AccountPage accountPage;
 	QuickViewIframe quickViewIframe;
 	ShoppingCartSummary shoppingCartSummary;
-	SignInPage signInPage;
+	SignInSignOut signInPage;
 	ViewCart viewCart;
 	WomenTab womenTab;
 

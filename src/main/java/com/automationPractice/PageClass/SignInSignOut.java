@@ -1,4 +1,4 @@
-package com.automationPractice.DeleteItemFromCart;
+package com.automationPractice.PageClass;
 
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
@@ -7,8 +7,8 @@ import org.openqa.selenium.support.PageFactory;
 import com.automationPractice.BasePackage.TestBase;
 import com.automationPractice.Utils.Utils;
 
-public class SignInPage extends TestBase {
-	public SignInPage() {
+public class SignInSignOut extends TestBase {
+	public SignInSignOut() {
 		PageFactory.initElements(wd, this);
 		waitForDocumentCompleteState(10);
 	}

@@ -6,22 +6,22 @@ import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
 
 import com.automationPractice.BasePackage.TestBase;
-import com.automationPractice.DeleteItemFromCart.AccountPage;
-import com.automationPractice.DeleteItemFromCart.DeliveryAddress;
-import com.automationPractice.DeleteItemFromCart.Homepage;
-import com.automationPractice.DeleteItemFromCart.ItemPurchasedPayment;
-import com.automationPractice.DeleteItemFromCart.QuickViewIframe;
-import com.automationPractice.DeleteItemFromCart.Shipping;
-import com.automationPractice.DeleteItemFromCart.SignInPage;
-import com.automationPractice.DeleteItemFromCart.ViewCart;
-import com.automationPractice.DeleteItemFromCart.WomenTab;
+import com.automationPractice.PageClass.AccountPage;
+import com.automationPractice.PageClass.DeliveryAddress;
+import com.automationPractice.PageClass.Homepage;
+import com.automationPractice.PageClass.ItemPurchasedPayment;
+import com.automationPractice.PageClass.QuickViewIframe;
+import com.automationPractice.PageClass.Shipping;
+import com.automationPractice.PageClass.SignInSignOut;
+import com.automationPractice.PageClass.ViewCart;
+import com.automationPractice.PageClass.WomenTab;
 
 public class DeliveryAddressTest extends TestBase {
 
 	Homepage homepage;
 	AccountPage accountPage;
 	QuickViewIframe quickViewIframe;
-	SignInPage signInPage;
+	SignInSignOut signInPage;
 	ViewCart viewCart;
 	WomenTab womenTab;
 	DeliveryAddress deliveryAddress;
@@ -65,7 +65,6 @@ public class DeliveryAddressTest extends TestBase {
 
 		// Add quantity and size
 		quickViewIframe.addQuantity();
-//		quickViewIframe.sizeSelection();
 		quickViewIframe.addToCart();
 
 		// Proceed to checkout

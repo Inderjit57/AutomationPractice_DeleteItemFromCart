@@ -1,4 +1,4 @@
-package com.automationPractice.DeleteItemFromCart;
+package com.automationPractice.PageClass;
 
 import com.automationPractice.BasePackage.TestBase;
 import org.openqa.selenium.support.FindBy;

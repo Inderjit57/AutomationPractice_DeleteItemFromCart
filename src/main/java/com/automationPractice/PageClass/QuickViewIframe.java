@@ -1,4 +1,4 @@
-package com.automationPractice.DeleteItemFromCart;
+package com.automationPractice.PageClass;
 
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.interactions.Actions;
@@ -16,8 +16,8 @@ public class QuickViewIframe extends TestBase {
 	}
 
 	/*
-	 * First Scenario : Item to be deleted from Cart. So, iframe is closed to go
-	 * to Cart
+	 * First Scenario : Item to be deleted from Cart. So, iframe is closed to go to
+	 * Cart
 	 */
 
 	// this element is shared between two scenarios
@@ -48,7 +48,6 @@ public class QuickViewIframe extends TestBase {
 	public ViewCart clickOnCart() {
 		Actions actions = new Actions(wd);
 		actions.moveToElement(goToCart);
-//		Utils.moveToElement(goToCart);
 		Utils.javascriptClick(goToCart);
 		return new ViewCart();
 	}
