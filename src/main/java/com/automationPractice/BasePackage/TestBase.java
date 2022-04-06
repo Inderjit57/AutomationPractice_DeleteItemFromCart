@@ -89,7 +89,7 @@ public class TestBase {
 		wd.manage().window().maximize();
 		
 		//Implicit wait is used to keep pinging the dom to search for webElement
-		wd.manage().timeouts().implicitlyWait(Utils.IMPLICIT_WAIT, TimeUnit.SECONDS);
+//		wd.manage().timeouts().implicitlyWait(Utils.IMPLICIT_WAIT, TimeUnit.SECONDS);
 		
 		wd.manage().timeouts().pageLoadTimeout(Utils.PAGE_LOAD_TIMEOUT, TimeUnit.SECONDS);
 		driverWait = new WebDriverWait(wd, 20);

@@ -1,6 +1,7 @@
 package com.automationPractice.DeleteItemFromCart;
 
 import org.openqa.selenium.WebElement;
+import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 
@@ -11,11 +12,12 @@ public class QuickViewIframe extends TestBase {
 
 	public QuickViewIframe() {
 		PageFactory.initElements(wd, this);
+		waitForDocumentCompleteState(10);
 	}
-	
+
 	/*
-	 *  First Scenario : Item to be deleted from Cart. So, the frame is closed
-	 *  to go to Cart
+	 * First Scenario : Item to be deleted from Cart. So, iframe is closed to go
+	 * to Cart
 	 */
 
 	// this element is shared between two scenarios
@@ -30,31 +32,30 @@ public class QuickViewIframe extends TestBase {
 
 	@FindBy(css = "a[title='View my shopping cart']")
 	WebElement goToCart;
-	
-	
+
 	public void addToCart() {
 		Utils.javascriptClick(addToCart);
-
 		// switch back to default content
 		wd.switchTo().defaultContent();
 	}
 
 	// Close the item selection frame
 	public void closeTheframe() {
-		closeBtn.click();
+		Utils.javascriptClick(closeBtn);
 	}
 
 	// Go to Cart page
 	public ViewCart clickOnCart() {
-		Utils.moveToElement(goToCart);
-
-		goToCart.click();
+		Actions actions = new Actions(wd);
+		actions.moveToElement(goToCart);
+//		Utils.moveToElement(goToCart);
+		Utils.javascriptClick(goToCart);
 		return new ViewCart();
 	}
 
 	// Return to Women Tab page
 	public WomenTab goToCart() {
-		closeBtn.click();
+		Utils.javascriptClick(closeBtn);
 		return new WomenTab();
 	}
 
@@ -80,9 +81,10 @@ public class QuickViewIframe extends TestBase {
 	public void sizeSelection() {
 		Utils.javascriptClick(selectSize);
 	}
-	 public ViewCart proceedToCheckOut() {
-		 checkOutBtn.click();
-		 return new ViewCart();		 
-	 }
+
+	public ViewCart proceedToCheckOut() {
+		Utils.javascriptClick(checkOutBtn);
+		return new ViewCart();
+	}
 
 }

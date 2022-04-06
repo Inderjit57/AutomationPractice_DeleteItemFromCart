@@ -8,6 +8,7 @@ import org.openqa.selenium.WebElement;
 public class AccountPage extends TestBase {
 	public AccountPage() {
 		PageFactory.initElements(wd, this);
+		waitForDocumentCompleteState(10);
 	}
 
 	@FindBy(css = "a[title='View my customer account'] span")

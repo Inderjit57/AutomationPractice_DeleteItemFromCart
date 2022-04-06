@@ -148,7 +148,7 @@ public class Utils extends TestBase {
 		}
 	}
 
-	public void switchToFrame(WebElement element) {
+	public static void switchToFrame(WebElement element) {
 		wd.switchTo().frame(waitForElementToBeVisible(element, 10));
 	}
 

@@ -1,5 +1,5 @@
 package com.Inderjit.AutomationPractice_DeleteItem;
 
-public class ShippingTest {
+public class PaymentTest {
 
 }

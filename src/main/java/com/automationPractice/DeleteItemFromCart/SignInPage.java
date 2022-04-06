@@ -5,10 +5,12 @@ import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 
 import com.automationPractice.BasePackage.TestBase;
+import com.automationPractice.Utils.Utils;
 
 public class SignInPage extends TestBase {
 	public SignInPage() {
 		PageFactory.initElements(wd, this);
+		waitForDocumentCompleteState(10);
 	}
 
 	@FindBy(css = ".col-xs-12.col-sm-6 div input[id='email']")
@@ -21,16 +23,28 @@ public class SignInPage extends TestBase {
 	WebElement signInBtn;
 
 	public void enterEmail(String email) {
-		emailInput.sendKeys(email);
+		Utils.sendData(emailInput, email);
 	}
 
 	public void enterPassword(String password) {
-		passwordInput.sendKeys(password);
+		Utils.sendData(passwordInput, password);
 	}
 
 	public AccountPage clickSignInBtn() {
 		signInBtn.click();
 		return new AccountPage();
+	}
+
+	/*
+	 * Scenario : Sign out functionality
+	 */
+
+	@FindBy(css = "a[title='Log me out']")
+	WebElement signoutBtn;
+
+	public Homepage clickSignout() {
+		Utils.javascriptClick(signoutBtn);
+		return new Homepage();
 	}
 
 }

@@ -13,6 +13,7 @@ public class ShoppingCartSummary extends TestBase {
 
 	public ShoppingCartSummary() {
 		PageFactory.initElements(wd, this);
+		waitForDocumentCompleteState(10);
 	}
 
 	@FindBy(css = "p[class='alert alert-warning']")

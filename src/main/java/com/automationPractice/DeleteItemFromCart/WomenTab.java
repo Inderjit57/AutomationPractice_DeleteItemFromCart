@@ -11,12 +11,13 @@ import com.automationPractice.Utils.Utils;
 public class WomenTab extends TestBase {
 	public WomenTab() {
 		PageFactory.initElements(wd, this);
+		waitForDocumentCompleteState(10);
 	}
 
 	// Move to element: short sleeve
 	@FindBy(css = "li[class='ajax_block_product col-xs-12 col-sm-6 col-md-4 first-in-line first-item-of-tablet-line first-item-of-mobile-line']")
 	WebElement moveToItemFadedShortSleeve;
-	
+
 	// Hover mouse to short sleeve
 	@FindBy(css = ".product_list.grid.row li:nth-of-type(1) div div div a[class='quick-view']")
 	WebElement mouseHoverToShortSleeve;
@@ -30,23 +31,16 @@ public class WomenTab extends TestBase {
 	WebElement viewCart;
 
 	public void hoverToItem() {
-		actions = new Actions(wd);
-		actions.moveToElement(moveToItemFadedShortSleeve).perform();
+		Utils.moveToElement(moveToItemFadedShortSleeve);
 	}
 
 	public QuickViewIframe switchToIframe() {
 		mouseHoverToShortSleeve.click();
-		wd.switchTo().frame(iframe);
+		Utils.switchToFrame(iframe);
 		return new QuickViewIframe();
 	}
-//	public QuickViewIframe switchToIframe(WebElement element, int index ) {
-//		element.click();
-//		wd.switchTo().frame(index);
-//		return new QuickViewIframe();
-//	}
 
 	public ViewCart clickOnCart() {
-//		viewCart.click();
 		Utils.javascriptClick(viewCart);
 		return new ViewCart();
 	}

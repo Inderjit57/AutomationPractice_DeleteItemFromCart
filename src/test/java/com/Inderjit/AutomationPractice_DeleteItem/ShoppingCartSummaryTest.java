@@ -29,14 +29,15 @@ public class ShoppingCartSummaryTest extends TestBase {
 
 		// Initializing landing page / Homepage
 		homepage = new Homepage();
-		
+
 	}
 
 	@Test
-	public void deleteItemFromCart() {
+	public void verifyDeleteItemFromCart() {
 
 		// Click signIn on homepage, Enter Login Credentials and signIn
-		signInPage = homepage.clickSignInBtn(); // ClickSignInBtn invoke the constructor of the SignInPage.
+		// ClickSignInBtn invoke the constructor of the SignInPage.
+		signInPage = homepage.clickSignInBtn();
 		signInPage.enterEmail(properties.getProperty("email"));
 		signInPage.enterPassword(properties.getProperty("password"));
 
@@ -61,13 +62,14 @@ public class ShoppingCartSummaryTest extends TestBase {
 		// click add to cart
 		quickViewIframe.addToCart();
 
-
 		// Close the tab
 		quickViewIframe.closeTheframe();
 
 		// QuickViewIFrame invokes the constructor of ViewCart
 		viewCart = quickViewIframe.clickOnCart();
-		viewCart.clickDelete(); // Delete the item from the cart
+		
+		// Delete the item from the cart
+		viewCart.clickDelete(); 
 
 		shoppingCartSummary = viewCart.goToShoppingCart();
 

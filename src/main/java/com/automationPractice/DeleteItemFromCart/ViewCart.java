@@ -10,10 +10,11 @@ import com.automationPractice.Utils.Utils;
 public class ViewCart extends TestBase {
 	public ViewCart() {
 		PageFactory.initElements(wd, this);
+		waitForDocumentCompleteState(10);
 	}
 
 	/*
-	 * Scenario : Item to be Deleted from Cart
+	 * Scenario: Item to be Deleted from Cart
 	 */
 	@FindBy(css = "a[title='Delete']")
 	WebElement deleteItemFromCart;
@@ -28,7 +29,7 @@ public class ViewCart extends TestBase {
 	}
 	
 	/*
-	 * Scenario :Purchase Item
+	 * Scenario: Purchase Item
 	 */
 	@FindBy(css = "#total_price_container")
 	WebElement totalPriceDisplayed;
@@ -36,8 +37,8 @@ public class ViewCart extends TestBase {
 	@FindBy(css = ".cart_navigation.clearfix a[title='Proceed to checkout'] span i")
 	WebElement proceedToCheckOutBtnOnViewCart;
 	
-	public void getTotalPriceDisplayed() {
-		Utils.getTextFromWebelement(totalPriceDisplayed);
+	public String getTotalPriceDisplayed() {
+		return Utils.getTextFromWebelement(totalPriceDisplayed);
 	}
 	public DeliveryAddress clickOnProceedToCheckout() {
 		Utils.javascriptClick(proceedToCheckOutBtnOnViewCart);

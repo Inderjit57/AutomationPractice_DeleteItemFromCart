@@ -10,6 +10,7 @@ import com.automationPractice.Utils.Utils;
 public class DeliveryAddress extends TestBase {
 	public DeliveryAddress() {
 		PageFactory.initElements(wd, this);
+		waitForDocumentCompleteState(10);
 	}
 
 	/*
