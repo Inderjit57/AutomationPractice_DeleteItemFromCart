@@ -87,21 +87,21 @@ public class TestBase {
 
 		je = (JavascriptExecutor) wd;
 		wd.manage().window().maximize();
-		
-		//Implicit wait is used to keep pinging the dom to search for webElement
+
+		// Implicit wait is used to keep pinging the dom to search for webElement
 //		wd.manage().timeouts().implicitlyWait(Utils.IMPLICIT_WAIT, TimeUnit.SECONDS);
-		
+
 		wd.manage().timeouts().pageLoadTimeout(Utils.PAGE_LOAD_TIMEOUT, TimeUnit.SECONDS);
 		driverWait = new WebDriverWait(wd, 20);
 
 		wd.get(properties.getProperty("Url"));
 	}
-	
+
 	/*
-	 * In order to verify the page is loaded, 
-	 * Javascrptexecutor is used which waits until the page is loaded and then ping the dom to search for web element
-	 *  v -> is a functional interface, it will only work on java 1.8 and after. So version has to be changed inside
-	 *  the java compiler, if below 1.8
+	 * In order to verify the page is loaded, Javascrptexecutor is used which waits
+	 * until the page is loaded and then ping the dom to search for web element v ->
+	 * is a functional interface, it will only work on java 1.8 and after. So
+	 * version has to be changed inside the java compiler, if below 1.8
 	 */
 	public void waitForDocumentCompleteState(int timeOutInSeconds) {
 		new WebDriverWait(wd, 15).until((ExpectedCondition<Boolean>) v -> {
