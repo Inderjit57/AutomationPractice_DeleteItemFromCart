@@ -24,8 +24,8 @@ public class ViewCart extends TestBase {
 		Utils.javascriptClick(deleteItemFromCart);
 	}
 
-	public ShoppingCartSummary goToShoppingCart() {
-		return new ShoppingCartSummary();
+	public VerifyItemDeleted goToShoppingCart() {
+		return new VerifyItemDeleted();
 	}
 	
 	/*
@@ -40,9 +40,9 @@ public class ViewCart extends TestBase {
 	public String getTotalPriceDisplayed() {
 		return Utils.getTextFromWebelement(totalPriceDisplayed);
 	}
-	public DeliveryAddress clickOnProceedToCheckout() {
+	public ItemPurchaseConfirmation clickOnProceedToCheckout() {
 		Utils.javascriptClick(proceedToCheckOutBtnOnViewCart);
-		return new DeliveryAddress();
+		return new ItemPurchaseConfirmation();
 	}
 
 }
