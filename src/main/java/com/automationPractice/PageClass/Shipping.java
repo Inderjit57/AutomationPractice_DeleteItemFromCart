@@ -10,6 +10,7 @@ import com.automationPractice.Utils.Utils;
 public class Shipping extends TestBase {
 	public Shipping() {
 		PageFactory.initElements(wd, this);
+		waitForDocumentCompleteState(10);
 	}
 
 	// Click checkBox and proceed To Checkout which returns Payment class
