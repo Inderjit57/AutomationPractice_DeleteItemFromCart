@@ -14,7 +14,7 @@ public class QuickViewIframe extends TestBase {
 
 	public QuickViewIframe() {
 		PageFactory.initElements(wd, this);
-		waitForDocumentCompleteState(10);
+		wd.manage().timeouts().implicitlyWait(Utils.IMPLICIT_WAIT, TimeUnit.SECONDS);
 	}
 
 	/*
@@ -36,10 +36,11 @@ public class QuickViewIframe extends TestBase {
 	WebElement goToCart;
 
 	public void addToCart() {
-		//Utils.javascriptClick(addToCart);
+		// Utils.javascriptClick(addToCart);
 		addToCart.click();
 		// switch back to default content
 		wd.switchTo().defaultContent();
+
 	}
 
 	// Close the item selection frame
@@ -71,7 +72,8 @@ public class QuickViewIframe extends TestBase {
 	@FindBy(css = ".attribute_list div select option:nth-of-type(3)")
 	WebElement selectSize;
 
-	@FindBy(css = ".layer_cart_cart.col-xs-12.col-md-6 :nth-of-type(4) a")
+	@FindBy(xpath = "//a[@title='Proceed to checkout']")
+//	.layer_cart_cart.col-xs-12.col-md-6 :nth-of-type(4) a
 	WebElement checkOutBtn;
 
 	// Using Javascript Executer to click to add quantity
@@ -85,7 +87,7 @@ public class QuickViewIframe extends TestBase {
 	}
 
 	public ViewCart proceedToCheckOut() {
-		Utils.javascriptClick(checkOutBtn);
+		checkOutBtn.click();
 		return new ViewCart();
 	}
 
