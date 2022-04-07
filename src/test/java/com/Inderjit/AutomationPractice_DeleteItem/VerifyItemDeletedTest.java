@@ -9,16 +9,16 @@ import com.automationPractice.BasePackage.TestBase;
 import com.automationPractice.PageClass.AccountPage;
 import com.automationPractice.PageClass.Homepage;
 import com.automationPractice.PageClass.QuickViewIframe;
-import com.automationPractice.PageClass.ShoppingCartSummary;
+import com.automationPractice.PageClass.VerifyItemDeleted;
 import com.automationPractice.PageClass.SignInSignOut;
 import com.automationPractice.PageClass.ViewCart;
 import com.automationPractice.PageClass.WomenTab;
 
-public class ShoppingCartSummaryTest extends TestBase {
+public class VerifyItemDeletedTest extends TestBase {
 	Homepage homepage;
 	AccountPage accountPage;
 	QuickViewIframe quickViewIframe;
-	ShoppingCartSummary shoppingCartSummary;
+	VerifyItemDeleted verifyItemDeleted;
 	SignInSignOut signInPage;
 	ViewCart viewCart;
 	WomenTab womenTab;
@@ -71,13 +71,13 @@ public class ShoppingCartSummaryTest extends TestBase {
 		// Delete the item from the cart
 		viewCart.clickDelete(); 
 
-		shoppingCartSummary = viewCart.goToShoppingCart();
+		verifyItemDeleted = viewCart.goToShoppingCart();
 
 		// wait for the element to appear
-		shoppingCartSummary.waitForElementToAppear();
+		verifyItemDeleted.waitForElementToAppear();
 
 		// verify successful deleted message
-		String successfulDeletedMessage = shoppingCartSummary.getDeletedText();
+		String successfulDeletedMessage = verifyItemDeleted.getDeletedText();
 		System.out.println("Deleted message: " + successfulDeletedMessage);
 		Assert.assertEquals(successfulDeletedMessage, properties.getProperty("ItemDeletedMessage"),
 				"Message not found");

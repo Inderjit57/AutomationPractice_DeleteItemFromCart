@@ -7,7 +7,7 @@ import org.testng.annotations.Test;
 
 import com.automationPractice.BasePackage.TestBase;
 import com.automationPractice.PageClass.AccountPage;
-import com.automationPractice.PageClass.DeliveryAddress;
+import com.automationPractice.PageClass.ItemPurchaseConfirmation;
 import com.automationPractice.PageClass.Homepage;
 import com.automationPractice.PageClass.ItemPurchasedPayment;
 import com.automationPractice.PageClass.QuickViewIframe;
@@ -16,7 +16,7 @@ import com.automationPractice.PageClass.SignInSignOut;
 import com.automationPractice.PageClass.ViewCart;
 import com.automationPractice.PageClass.WomenTab;
 
-public class DeliveryAddressTest extends TestBase {
+public class ItemPurchaseConfirmationTest extends TestBase {
 
 	Homepage homepage;
 	AccountPage accountPage;
@@ -24,7 +24,7 @@ public class DeliveryAddressTest extends TestBase {
 	SignInSignOut signInPage;
 	ViewCart viewCart;
 	WomenTab womenTab;
-	DeliveryAddress deliveryAddress;
+	ItemPurchaseConfirmation itemPurchaseConfirmation;
 	ItemPurchasedPayment itemPurchasedPayment;
 	Shipping shipping;
 
@@ -77,13 +77,13 @@ public class DeliveryAddressTest extends TestBase {
 		Assert.assertEquals(priceDisplayed, actualDisplayedText, "Expected Price is not Displayed");
 
 		// Proceed to checkout
-		deliveryAddress = viewCart.clickOnProceedToCheckout();
+		itemPurchaseConfirmation = viewCart.clickOnProceedToCheckout();
 
 		// Write message in the TextBox.
-		deliveryAddress.writeinTextBox(properties.getProperty("WritingMessageInATextBox"));
+		itemPurchaseConfirmation.writeinTextBox(properties.getProperty("WritingMessageInATextBox"));
 
 		// Proceed to shipping by clicking checkout
-		shipping = deliveryAddress.proceedToShipping();
+		shipping = itemPurchaseConfirmation.proceedToShipping();
 
 		// Click checkBox and proceed To Checkout
 		shipping.clickCheckBox();
@@ -104,7 +104,7 @@ public class DeliveryAddressTest extends TestBase {
 
 	@AfterMethod
 	public void closeBrowser() {
-		tearDown();
+//		tearDown();
 	}
 
 }

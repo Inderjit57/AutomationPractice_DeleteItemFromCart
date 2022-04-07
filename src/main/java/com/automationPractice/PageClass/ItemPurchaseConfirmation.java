@@ -7,8 +7,8 @@ import org.openqa.selenium.support.PageFactory;
 import com.automationPractice.BasePackage.TestBase;
 import com.automationPractice.Utils.Utils;
 
-public class DeliveryAddress extends TestBase {
-	public DeliveryAddress() {
+public class ItemPurchaseConfirmation extends TestBase {
+	public ItemPurchaseConfirmation() {
 		PageFactory.initElements(wd, this);
 		waitForDocumentCompleteState(10);
 	}

@@ -9,9 +9,9 @@ import org.openqa.selenium.support.ui.ExpectedConditions;
 import com.automationPractice.BasePackage.TestBase;
 import com.automationPractice.Utils.Utils;
 
-public class ShoppingCartSummary extends TestBase {
+public class VerifyItemDeleted extends TestBase {
 
-	public ShoppingCartSummary() {
+	public VerifyItemDeleted() {
 		PageFactory.initElements(wd, this);
 		waitForDocumentCompleteState(10);
 	}
