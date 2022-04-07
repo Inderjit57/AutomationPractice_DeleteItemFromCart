@@ -1,5 +1,7 @@
 package com.automationPractice.PageClass;
 
+import java.util.concurrent.TimeUnit;
+
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
@@ -13,7 +15,8 @@ public class VerifyItemDeleted extends TestBase {
 
 	public VerifyItemDeleted() {
 		PageFactory.initElements(wd, this);
-		waitForDocumentCompleteState(10);
+//		waitForDocumentCompleteState(10);
+		wd.manage().timeouts().implicitlyWait(Utils.IMPLICIT_WAIT, TimeUnit.SECONDS);
 	}
 
 	@FindBy(css = "p[class='alert alert-warning']")
