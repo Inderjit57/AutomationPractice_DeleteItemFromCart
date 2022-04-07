@@ -104,7 +104,7 @@ public class ItemPurchaseConfirmationTest extends TestBase {
 
 	@AfterMethod
 	public void closeBrowser() {
-//		tearDown();
+		tearDown();
 	}
 
 }
