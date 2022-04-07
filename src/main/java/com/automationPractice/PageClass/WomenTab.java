@@ -1,5 +1,7 @@
 package com.automationPractice.PageClass;
 
+import java.util.concurrent.TimeUnit;
+
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.FindBy;
@@ -11,7 +13,8 @@ import com.automationPractice.Utils.Utils;
 public class WomenTab extends TestBase {
 	public WomenTab() {
 		PageFactory.initElements(wd, this);
-		waitForDocumentCompleteState(10);
+//		waitForDocumentCompleteState(10);
+		wd.manage().timeouts().implicitlyWait(Utils.IMPLICIT_WAIT, TimeUnit.SECONDS);
 	}
 
 	// Move to element: short sleeve
