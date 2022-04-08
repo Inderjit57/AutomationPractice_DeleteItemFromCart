@@ -40,7 +40,7 @@ public class TestBase {
 		try {
 			properties = new Properties();
 			file = new FileInputStream(
-					"C:\\Users\\singh\\Inderjit-workspace\\AutomationPractice_DeleteItem\\src\\main\\java\\com\\automationPractice\\configuration\\configuration.properties");
+					"src//main//java//com//automationPractice//configuration//configuration.properties");
 			properties.load(file);
 
 		} catch (IOException e) {
