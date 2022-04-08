@@ -57,7 +57,7 @@ public class ExtentReportListener extends TestListenerAdapter {
 
 		htmlReporter.config().setDocumentTitle("Automation Practice"); // Title of the report generated
 		htmlReporter.config().setReportName("Automation Report"); // Name of the report generated
-		htmlReporter.config().setTestViewChartLocation(ChartLocation.BOTTOM); // location of the chart in the report
+		htmlReporter.config().setTestViewChartLocation(ChartLocation.TOP); // location of the chart in the report
 		htmlReporter.config().setTheme(Theme.STANDARD);
 	}
 
