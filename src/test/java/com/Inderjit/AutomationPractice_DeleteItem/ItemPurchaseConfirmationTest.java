@@ -75,7 +75,7 @@ public class ItemPurchaseConfirmationTest extends TestBase {
 		String priceDisplayed = viewCart.getTotalPriceDisplayed();
 		String actualDisplayedText = properties.getProperty("totalPriceDisplayedFor2Items");
 		System.out.println("Total Price Displayed For 2 Items: " + priceDisplayed);
-		Assert.assertEquals(priceDisplayed, actualDisplayedText, "Expected Price is not Displayed");
+		sf.assertEquals(priceDisplayed, actualDisplayedText, "Expected Price is not Displayed");
 
 		// Proceed to checkout
 		itemPurchaseConfirmation = viewCart.clickOnProceedToCheckout();
@@ -99,8 +99,9 @@ public class ItemPurchaseConfirmationTest extends TestBase {
 		String successfulMessage = itemPurchasedPayment.getConfirmationMessage();
 		String actualMessage = properties.getProperty("successfullMessageAfterItemPurchased");
 
-		Assert.assertEquals(successfulMessage, actualMessage, "Successful item purchased message is not displayed");
-
+		sf.assertEquals(successfulMessage, actualMessage, "Successful item purchased message is not displayed");
+		
+		sf.assertAll();
 	}
 
 	@AfterMethod

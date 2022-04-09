@@ -80,9 +80,10 @@ public class VerifyItemDeletedTest extends TestBase {
 		// verify successful deleted message
 		String successfulDeletedMessage = verifyItemDeleted.getDeletedText();
 		System.out.println("Deleted message: " + successfulDeletedMessage);
-		Assert.assertEquals(successfulDeletedMessage, properties.getProperty("ItemDeletedMessage"),
+		sf.assertEquals(successfulDeletedMessage, properties.getProperty("ItemDeletedMessage"),
 				"Message not found");
-
+		
+		sf.assertAll();
 	}
 
 	@AfterMethod
