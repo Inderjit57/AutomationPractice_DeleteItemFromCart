@@ -4,6 +4,7 @@ import org.testng.Assert;
 import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
+import org.testng.asserts.SoftAssert;
 
 import com.automationPractice.BasePackage.TestBase;
 import com.automationPractice.PageClass.AccountPage;
@@ -27,6 +28,7 @@ public class ItemPurchaseConfirmationTest extends TestBase {
 	ItemPurchaseConfirmation itemPurchaseConfirmation;
 	ItemPurchasedPayment itemPurchasedPayment;
 	Shipping shipping;
+	SoftAssert sf = new SoftAssert();
 
 	@BeforeMethod
 	public void intialisation() {
@@ -48,11 +50,10 @@ public class ItemPurchaseConfirmationTest extends TestBase {
 		// SignInPage invokes the constructor of AccountPage.
 		accountPage = signInPage.clickSignInBtn();
 
-		// Verify if account is successfully opened
-		String successfullSignInText = accountPage.getTextFromMessage();
-		String accountMessage = properties.getProperty("accountMessage");
-		System.out.println("Account login Message : " + accountMessage);
-		Assert.assertEquals(successfullSignInText, accountMessage, "Account name is not present");
+		// Verify if account is successfully opened and signout button is displayed
+		boolean signoutPresent = accountPage.isSignOutBtnDisplayed();
+		System.out.println("Is Signout btn displayed : " + signoutPresent);
+		sf.assertEquals(signoutPresent, true, "Log button is not present");
 
 		// Go to Women Tab
 		// AccountPage invokes the constructor of WomenTab.
