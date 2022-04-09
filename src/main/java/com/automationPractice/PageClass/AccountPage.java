@@ -11,14 +11,14 @@ public class AccountPage extends TestBase {
 		waitForDocumentCompleteState(10);
 	}
 
-	@FindBy(css = "a[title='View my customer account'] span")
-	WebElement welcomeMessageText;
+	@FindBy(css = "a[title='Log me out']")
+	WebElement signOutBtnPresent;
 
 	@FindBy(css = "a[title='Women']")
 	WebElement womenTab;
 
-	public String getTextFromMessage() {
-		return welcomeMessageText.getText();
+	public boolean isSignOutBtnDisplayed() {
+		return signOutBtnPresent.isDisplayed();
 	}
 
 	public WomenTab clickOnWomenTab() {
