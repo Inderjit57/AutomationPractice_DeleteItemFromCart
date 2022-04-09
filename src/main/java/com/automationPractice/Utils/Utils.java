@@ -22,7 +22,7 @@ import com.automationPractice.BasePackage.TestBase;
 
 public class Utils extends TestBase {
 	public static int IMPLICIT_WAIT = 10;
-	public static int PAGE_LOAD_TIMEOUT = 30;
+	public static int PAGE_LOAD_TIMEOUT = 10;
 
 	public static String generateRandomEmail() {
 
