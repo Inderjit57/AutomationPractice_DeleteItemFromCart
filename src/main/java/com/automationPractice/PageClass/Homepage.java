@@ -50,9 +50,20 @@ public class Homepage extends TestBase {
 
 	}
 
+	// Search page
 	public PageAfterClickingSearchBtn clickSearch() {
 		Utils.javascriptClick(searchBtn);
 		return new PageAfterClickingSearchBtn();
+	}
+
+	// Contact us page
+	// Locator for Contact us
+	@FindBy(css = "a[title='Contact Us']")
+	WebElement contactUsBtn;
+	
+	public ContactUsPage clickContactUs() {
+		Utils.javascriptClick(contactUsBtn);
+		return new ContactUsPage();
 	}
 
 }
