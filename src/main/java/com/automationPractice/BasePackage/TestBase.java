@@ -104,7 +104,7 @@ public class TestBase {
 	 * version has to be changed inside the java compiler, if below 1.8
 	 */
 	public void waitForDocumentCompleteState(int timeOutInSeconds) {
-		new WebDriverWait(wd, 15).until((ExpectedCondition<Boolean>) v -> {
+		new WebDriverWait(wd, 10).until((ExpectedCondition<Boolean>) v -> {
 			logger.info("Verifying page has loaded......");
 			je = (JavascriptExecutor) wd;
 			String documentIsReady = je.executeScript("return document.readyState").toString();
