@@ -39,7 +39,7 @@ public class ItemPurchaseConfirmationTest extends TestBase {
 
 	}
 
-	@Test
+	@Test(enabled = false)
 	public void verifyItemPurchased() {
 		// Click signIn on homepage, Enter Login Credentials and signIn
 		// ClickSignInBtn invoke the constructor of the SignInPage.
