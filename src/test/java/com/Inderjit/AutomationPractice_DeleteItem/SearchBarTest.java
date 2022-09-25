@@ -29,7 +29,8 @@ public class SearchBarTest extends TestBase {
 
 	}
 
-	@Test(dataProvider = "signUpDataProvider")
+//	@Test(dataProvider = "signUpDataProvider")
+	@Test(enabled = false)
 	public void verifySearchBarIsWorking(String text) {
 		
 		homepage.writeIteminSearchBar(text);
