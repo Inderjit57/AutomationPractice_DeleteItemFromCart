@@ -13,15 +13,19 @@
 	</listeners>
 	<test thread-count="5" name="Test">
 		<classes>
-			<class name="com.automationPractice.BasePackage.TestBase" />
-			<class
-				name="com.Inderjit.AutomationPractice_DeleteItem.ItemPurchaseConfirmationTest" />
+
 			<class
 				name="com.Inderjit.AutomationPractice_DeleteItem.SignInSignOutTest" />
+
 			<class
 				name="com.Inderjit.AutomationPractice_DeleteItem.VerifyItemDeletedTest" />
 			<class
 				name="com.Inderjit.AutomationPractice_DeleteItem.SearchBarTest" />
+			<class
+				name="com.Inderjit.AutomationPractice_DeleteItem.ItemPurchaseConfirmationTest" />
+
+			<class
+				name="com.Inderjit.AutomationPractice_DeleteItem.CustomerServiceTest" />
 		</classes>
 	</test> <!-- Test -->
 </suite> <!-- Suite -->
