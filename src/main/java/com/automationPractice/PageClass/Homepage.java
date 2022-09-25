@@ -18,6 +18,7 @@ public class Homepage extends TestBase {
 	WebElement signInBtn;
 
 	public SignInSignOut clickSignInBtn() {
+//		Utils.javascriptClick(signInBtn);
 		signInBtn.click();
 		return new SignInSignOut();
 	}
