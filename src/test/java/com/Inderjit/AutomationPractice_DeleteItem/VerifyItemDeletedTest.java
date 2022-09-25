@@ -34,7 +34,7 @@ public class VerifyItemDeletedTest extends TestBase {
 
 	}
 
-	@Test
+	@Test(enabled = true)
 	public void verifyDeleteItemFromCart() {
 
 		// Click signIn on homepage, Enter Login Credentials and signIn
