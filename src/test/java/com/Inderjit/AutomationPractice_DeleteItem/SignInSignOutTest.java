@@ -29,7 +29,8 @@ public class SignInSignOutTest extends TestBase {
 
 	}
 
-	@Test(dataProvider = "signUpDataProvider")
+//	@Test(dataProvider = "signUpDataProvider")
+	@Test(enabled = true)
 	public void verifySignoutFunctionality(String email, String password) {
 		// Click signIn on homepage, Enter Login Credentials and signIn
 		// ClickSignInBtn invoke the constructor of the SignInPage.
