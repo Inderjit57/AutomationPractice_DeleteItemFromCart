@@ -2,6 +2,8 @@ package com.automationPractice.BasePackage;
 
 import java.io.FileInputStream;
 import java.io.IOException;
+import java.net.MalformedURLException;
+import java.net.URL;
 import java.util.Properties;
 import java.util.concurrent.TimeUnit;
 
@@ -9,10 +11,14 @@ import org.apache.log4j.BasicConfigurator;
 import org.apache.log4j.Logger;
 import org.apache.log4j.PropertyConfigurator;
 import org.openqa.selenium.JavascriptExecutor;
+import org.openqa.selenium.Platform;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.chrome.ChromeOptions;
 import org.openqa.selenium.edge.EdgeDriver;
 import org.openqa.selenium.interactions.Actions;
+import org.openqa.selenium.remote.DesiredCapabilities;
+import org.openqa.selenium.remote.RemoteWebDriver;
 import org.openqa.selenium.support.events.EventFiringWebDriver;
 import org.openqa.selenium.support.ui.ExpectedCondition;
 import org.openqa.selenium.support.ui.WebDriverWait;
@@ -68,8 +74,23 @@ public class TestBase {
 		String openSelectedBrowser = properties.getProperty("browser");
 		switch (openSelectedBrowser) {
 		case ("chrome"):
-			WebDriverManager.chromedriver().setup();
-			wd = new ChromeDriver();
+//			WebDriverManager.chromedriver().setup();
+//			wd = new ChromeDriver();
+
+			DesiredCapabilities cap = new DesiredCapabilities();
+			cap.setBrowserName("chrome");
+			cap.setPlatform(Platform.WINDOWS);
+
+			ChromeOptions options = new ChromeOptions();
+			options.merge(cap);
+
+			String hubURL = "http://localhost:4444/wd/hub";
+			try {
+				wd = new RemoteWebDriver(new URL(hubURL), options);
+			} catch (MalformedURLException e) {
+				e.printStackTrace();
+			}
+
 			break;
 
 		case ("edge"):
